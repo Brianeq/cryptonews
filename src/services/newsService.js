@@ -1,3 +1,6 @@
+
+import fallbackNews from "../assets/fallback-news.jpg"; 
+
 // CoinDesk article list (ES) + Microlink (og:image)
 const COINDESK_LIST = "https://data-api.coindesk.com/news/v1/article/list";
 const MICROLINK = "https://api.microlink.io";
@@ -9,13 +12,31 @@ const normalize = (a, i = 0) => ({
   url: a.URL ?? a.url ?? a.canonical_url ?? "",
 });
 
-// (opcional) header con API key de CoinDesk si la pusiste en .env
+// (opcional) 
 const headers = (() => {
   const h = {};
   const key = import.meta.env?.VITE_COINDESK_API_KEY;
   if (key) h["authorization"] = `Apikey ${key}`;
   return h;
 })();
+
+const safeISO = (d) => {
+  const t = new Date(d);
+  return isNaN(t.getTime()) ? new Date().toISOString() : t.toISOString();
+};
+
+// si Microlink rate-limit/ERATE aparece, no lo volvemos a intentar en esta sesión
+let MICROLINK_BLOCKED = false;
+
+const asFallback = (it) => ({
+  id: it.id,
+  title: it.title,
+  url: it.url,
+  image: fallbackNews,                 
+  alt: it.title || "CryptoNews",
+  description: it.rawDescription || "",
+  publishedAt: it.rawDate ? safeISO(it.rawDate) : new Date().toISOString(),
+});
 
 export async function fetchCoindeskNewsESDetailed(limit = 12) {
   // 1) Pido la lista ES de CoinDesk (pido extra por si alguno falla)
@@ -42,43 +63,51 @@ export async function fetchCoindeskNewsESDetailed(limit = 12) {
       };
     });
 
-  const safeISO = (d) => {
-    const t = new Date(d);
-    return isNaN(t.getTime()) ? new Date().toISOString() : t.toISOString();
-  };
-
   // 2) Enriquecimiento por Microlink: description + date + og:image
   const enrichOne = async (it) => {
+    // si ya bloqueamos Microlink, devolvemos fallback directo
+    if (MICROLINK_BLOCKED) return asFallback(it);
+
     try {
       const m = new URL(MICROLINK);
       m.searchParams.set("url", it.url);
       m.searchParams.set("fields", "title,description,date,image.url");
-      const r = await fetch(m.toString(), { cache: "no-store" });
-      const mj = await r.json();
 
-      const img = mj?.data?.image?.url;
+      const r = await fetch(m.toString(), { cache: "no-store" });
+
+      // leemos texto para poder capturar ERATE aunque no sea 200
+      const text = await r.text();
+      let mj = null;
+      try { mj = JSON.parse(text); } catch { /* ignore */ }
+
+      // Si hay rate limit/ERATE o status fail, bloqueamos Microlink y usamos fallback
+      if (r.status === 429 || mj?.code === "ERATE" || mj?.status === "fail") {
+        MICROLINK_BLOCKED = true;
+        return asFallback(it);
+      }
+
+      if (!r.ok) return asFallback(it);
+
+      const img = mj?.data?.image?.url || "";
       const desc = mj?.data?.description || it.rawDescription || "";
       const dateRaw = mj?.data?.date || it.rawDate || null;
+
+      // si no vino imagen -> fallback
+      const image = img ? img : fallbackNews;
 
       return {
         id: it.id,
         title: it.title,
         url: it.url,
-        image: img || "/slider/fallback.jpg",
+        image,
         alt: it.title || "CryptoNews",
         description: desc,
         publishedAt: dateRaw ? safeISO(dateRaw) : new Date().toISOString(),
       };
     } catch {
-      return {
-        id: it.id,
-        title: it.title,
-        url: it.url,
-        image: "/slider/fallback.jpg",
-        alt: it.title || "CryptoNews",
-        description: it.rawDescription || "",
-        publishedAt: it.rawDate ? safeISO(it.rawDate) : new Date().toISOString(),
-      };
+      // cualquier error => fallback y bloqueamos para no insistir
+      MICROLINK_BLOCKED = true;
+      return asFallback(it);
     }
   };
 
@@ -90,7 +119,7 @@ export async function fetchCoindeskNewsESDetailed(limit = 12) {
       id: `fallback-${enriched.length + 1}`,
       title: "CryptoNews",
       url: "#",
-      image: "/slider/fallback.jpg",
+      image: fallbackNews,              
       alt: "CryptoNews",
       description: "Resumen no disponible.",
       publishedAt: new Date().toISOString(),

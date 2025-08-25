@@ -8,6 +8,7 @@ import Footer from './Footer/Footer'
 import Noticias from './Noticias/Noticias'
 import { Routes, Route } from "react-router-dom";
 
+
 function Home() {
   return (
     <main>
@@ -25,6 +26,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/noticias" element={<Noticias />} />
+        
       </Routes>
 
       <Footer />
