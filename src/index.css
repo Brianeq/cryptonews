@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* En src/index.css */
+html, body, #root { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: linear-gradient(
+    to top,          /* empieza abajo en dorado y sube a negro */
+    #dbbd63 0%,      /* dorado vivo */
+    #a38626 35%,     /* gold clásico */
+    #2b2410 70%,     /* transición oscura cálida */
+    #000000 100%     /* negro arriba */
+  );
+  background-attachment: fixed; /* opcional: fija el degradado al hacer scroll */
+}

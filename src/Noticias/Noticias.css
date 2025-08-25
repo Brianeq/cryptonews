@@ -1,0 +1,143 @@
+/* ===== Contenedor y título ===== */
+.nd-wrapper {
+  width: min(1400px, 96vw);
+  margin: 32px auto 48px;
+}
+
+.nd-title {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  color: rgb(186, 179, 43);
+}
+
+/* ===== Lista ===== */
+.nd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+}
+
+/* ===== Tarjeta ===== */
+.nd-item {
+  display: grid;
+  grid-template-columns: 360px 1fr; /* imagen fija + contenido fluido */
+  align-items: center;
+  border: 2px solid #111;           /* borde grueso como el wireframe */
+  padding: 18px;
+  background: #afadad;
+}
+
+/* ===== Columna imagen con “doble marco” ===== */
+.nd-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #111;           /* marco externo */
+  padding: 10px;                    /* espacio para simular doble marco */
+  height: 180px;
+  background: #afadad;
+  text-decoration: none;
+}
+
+.nd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* recorta sin deformar */
+  display: block;
+}
+
+/* ===== Columna texto ===== */
+.nd-body {
+  padding: 8px 12px 8px 18px;
+  min-width: 0;                     /* permite elipsis correctamente */
+}
+
+/* Título (link) */
+.nd-hl {
+  display: inline-block;
+  font-size: clamp(20px, 2.3vw, 32px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 8px 0;
+  color: #111;
+  text-decoration: none;
+}
+
+.nd-hl:hover,
+.nd-hl:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Descripción */
+.nd-desc {
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.5;
+  color: #333;
+  margin: 0 0 10px 0;
+  display: -webkit-box;             /* opcional: recorte a 3 líneas */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Fecha */
+.nd-date {
+  font-size: 13px;
+  letter-spacing: .2px;
+  color: #000000;
+}
+
+/* Hover sutil de la tarjeta */
+.nd-item:hover {
+  filter: brightness(0.98);
+}
+
+/* ===== Estado vacío ===== */
+.nd-empty {
+  margin: 8px 0 0 0;
+  color: #666;
+}
+
+/* ===== Skeleton ===== */
+.nd-skel {
+  height: 216px;
+  border: 4px solid #111;
+  background:
+    linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%) left/400% 100%;
+  animation: nd-shimmer 1.2s infinite;
+}
+@keyframes nd-shimmer {
+  100% { background-position: right; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .nd-item { grid-template-columns: 320px 1fr; }
+  .nd-thumb { height: 170px; }
+}
+
+@media (max-width: 860px) {
+  .nd-item {
+    grid-template-columns: 1fr;     /* apilar imagen y texto */
+    padding: 14px;
+  }
+  .nd-thumb {
+    height: 210px;
+    margin-bottom: 12px;
+  }
+  .nd-body { padding: 0 4px; }
+  .nd-hl, .nd-desc, .nd-date { text-align: center; }
+}
+
+/* ===== (Opcional) Tema oscuro rápido ===== */
+/*
+.nd-item { background:#0b0f14; border-color:#000; }
+.nd-thumb { background:#121821; border-color:#000; }
+.nd-title, .nd-hl, .nd-desc, .nd-date { color:#eaeaea; }
+.nd-desc { color:#cfcfcf; }
+*/
