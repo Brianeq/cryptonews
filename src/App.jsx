@@ -6,6 +6,7 @@ import HeroSlider from './HeroSlider/HeroSlider'
 import MiniCharts from './MiniCharts/MiniCharts'
 import Footer from './Footer/Footer'
 import Noticias from './Noticias/Noticias'
+import Mercado from './Mercado/Mercado'
 import { Routes, Route } from "react-router-dom";
 
 
@@ -26,6 +27,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/noticias" element={<Noticias />} />
+        <Route path="/mercado" element={<Mercado />} />
         
       </Routes>
 

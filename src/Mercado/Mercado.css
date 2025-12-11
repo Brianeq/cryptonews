@@ -1,0 +1,101 @@
+/* src/Mercado/Mercado.css */
+
+.mercado-contenedor {
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para que no se estire demasiado */
+    margin: 0 auto; /* Centrar en la pantalla */
+    color: #ffffff;
+    min-height: 80vh;
+}
+
+.mercado-contenedor h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #f0b90b; /* Color dorado estilo Binance */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    font-family: sans-serif;
+}
+
+/* --- Estilos de la Tabla --- */
+.tabla-monedas {
+    width: 100%;
+    border-collapse: collapse; /* Elimina espacios entre bordes */
+    background-color: rgba(19, 23, 34, 0.85); /* Fondo oscuro semitransparente */
+    border-radius: 12px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados funcionen */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Sombra elegante */
+}
+
+/* Cabecera de la tabla */
+.tabla-monedas thead {
+    background-color: #1e2329;
+    border-bottom: 2px solid #2b3139;
+}
+
+.tabla-monedas th {
+    padding: 18px 15px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #848e9c; /* Gris claro para títulos */
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Filas del cuerpo */
+.tabla-monedas td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #2b3139;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Efecto al pasar el mouse por encima */
+.tabla-monedas tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: default;
+}
+
+/* Estilo para la celda del nombre e icono */
+.nombre-moneda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    color: #eaecef;
+}
+
+.nombre-moneda img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Colores para cambios de precio */
+.positivo {
+    color: #0ecb81; /* Verde brillante */
+}
+
+.negativo {
+    color: #f6465d; /* Rojo brillante */
+}
+
+/* --- Adaptación para Móviles --- */
+@media (max-width: 768px) {
+    .mercado-contenedor {
+        padding: 20px 10px;
+    }
+    
+    .tabla-monedas {
+        display: block;
+        overflow-x: auto; /* Permite deslizar horizontalmente en móvil */
+        white-space: nowrap;
+    }
+    
+    .mercado-contenedor h2 {
+        font-size: 1.8rem;
+    }
+}

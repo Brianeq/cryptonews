@@ -1,4 +1,4 @@
-/* mismo ancho/márgenes que el slider */
+
 .mc-wrapper {
   width: min(1400px, 98vw);
   margin: 8px auto 24px;
@@ -14,7 +14,7 @@
 
 @media (max-width: 900px) {
   .mc-grid {
-    grid-template-columns: 1fr; /* se apilan */
+    grid-template-columns: 1fr; 
   }
 }
 
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   min-height: 140px;
-  min-width: 0; /* evita que el contenido empuje el ancho */
+  min-width: 0; 
   color: white;
 }
 
@@ -60,7 +60,7 @@
 /* Sparkline */
 .mc-spark {
   width: 100%;
-  display: block; /* elimina espacios fantasmas de inline-svg */
+  display: block; 
 }
 
 /* Footer de la card */

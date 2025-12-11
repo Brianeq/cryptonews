@@ -1,12 +1,11 @@
 // CoinGecko - markets con sparkline (7d)
-// Free: funciona sin key. Si tenés una, ponela en .env como VITE_COINGECKO_KEY
-// y se envía en el header 'x-cg-demo-api-key' (evita rate limits).
+
 const API = "https://api.coingecko.com/api/v3/coins/markets";
 
 const headers = (() => {
   const h = {};
   const key = import.meta.env?.VITE_COINGECKO_KEY;
-  if (key) h["x-cg-demo-api-key"] = key; // opcional
+  if (key) h["x-cg-demo-api-key"] = key; // opcional 
   return h;
 })();
 
@@ -22,7 +21,7 @@ export async function fetchMiniMarkets(ids = ["bitcoin", "ethereum"], vs = "usd"
   if (!res.ok) throw new Error(`CoinGecko ${res.status} ${res.statusText}`);
   const data = await res.json();
 
-  // normalizo lo que necesitamos
+  // normalizacion de lo que necesito
   return data.map((c) => ({
     id: c.id,                      // "bitcoin"
     symbol: (c.symbol || "").toUpperCase(), // "BTC"

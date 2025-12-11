@@ -11,7 +11,7 @@ export default function Noticias(){
     (async () => {
       try {
         setLoading(true);
-        const data = await fetchCoindeskNewsESDetailed(12); // cantidad a mostrar
+        const data = await fetchCoindeskNewsESDetailed(12); 
         if (alive) setItems(data);
       } catch (e) {
         console.error(e);

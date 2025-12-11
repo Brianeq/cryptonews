@@ -20,7 +20,7 @@ export default function HeroSlider() {
         const data = await fetchCoindeskNewsESDetailed(5);
         setSlides(data);
         setIndex(0);
-        console.log("HeroSlider: primeras noticias", data); // ← verifica que hay 'title'
+        console.log("HeroSlider: primeras noticias", data); 
       } catch (e) {
         console.error(e);
         setSlides(

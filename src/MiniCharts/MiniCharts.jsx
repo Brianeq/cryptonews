@@ -2,9 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import "./MiniCharts.css";
 import { fetchMiniMarkets } from "../services/marketService";
 
-/* === Mini componente inline para el gráfico === */
+
 function Sparkline({ points = [], color = "#16a34a", height = 80, strokeW = 2 }) {
-  // viewBox fijo: el SVG se estira a width:100% por CSS
   const width = 320;
 
   const path = useMemo(() => {
@@ -35,9 +34,9 @@ function Sparkline({ points = [], color = "#16a34a", height = 80, strokeW = 2 })
   );
 }
 
-/* === Card una por moneda === */
+
 function Card({ coin }) {
-  // color por variación 24h (podés cambiar a 7d si querés)
+ 
   const up = (coin.change24h ?? 0) >= 0;
   const color = up ? "#16a34a" : "#dc2626";
 
@@ -66,7 +65,7 @@ function Card({ coin }) {
   );
 }
 
-/* === Contenedor de los 2 minigráficos === */
+
 export default function MiniCharts() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -75,7 +74,6 @@ export default function MiniCharts() {
     (async () => {
       try {
         const data = await fetchMiniMarkets(["bitcoin", "ethereum"], "usd");
-        // asegurar orden BTC, ETH
         const order = ["bitcoin", "ethereum"];
         data.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
         setCoins(data);
@@ -95,7 +93,7 @@ export default function MiniCharts() {
     <section
       className="mc-wrapper"
       aria-label="Resumen de mercado BTC y ETH"
-      /* fallback de layout por si el CSS no carga */
+
       style={{ width: "min(1400px, 96vw)", margin: "8px auto 24px" }}
     >
       <div
