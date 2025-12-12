@@ -1,0 +1,169 @@
+/* src/Contacto/Contacto.css */
+
+.contacto-contenedor {
+    /* Ocupa casi toda la pantalla para centrar verticalmente */
+    min-height: 85vh;
+    padding: 40px 20px;
+    
+    /* Flexbox para centrar la caja del formulario perfectamente */
+    display: flex;
+    justify-content: center; /* Centrado Horizontal */
+    align-items: center;     /* Centrado Vertical */
+    
+    /* Aseguramos que el color base sea blanco por si acaso */
+    color: #ffffff;
+}
+
+/* La "caja" o tarjeta del formulario */
+.contacto-wrapper {
+    /* Fondo oscuro sólido/semitransparente para que resalte sobre el fondo de la web */
+    background-color: #1e2329; 
+    
+    /* Espaciado interno generoso para que no se vea "chiquito" */
+    padding: 50px; 
+    
+    /* Bordes redondeados y borde sutil */
+    border-radius: 16px;
+    border: 1px solid #2b3139;
+    
+    /* Ancho: Ocupa todo el espacio posible hasta llegar a 600px */
+    width: 100%;
+    max-width: 1000px;
+    
+    /* Sombra para darle profundidad */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Encabezados */
+.contacto-wrapper h2 {
+    color: #f0b90b; /* Dorado */
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.contacto-wrapper p {
+    text-align: center;
+    color: #b7bdc6; /* Gris claro */
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- Estilos del Formulario --- */
+.formulario .campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.formulario label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #eaecef; /* Blanco hueso para etiquetas */
+    font-size: 1rem;
+}
+
+/* Inputs y Textarea (Donde escribes) */
+.formulario input, 
+.formulario textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #474d57;
+    
+    /* FONDO OSCURO Y LETRA BLANCA IMPRESCINDIBLE */
+    background-color: #0b0e11; 
+    color: #ffffff; 
+    
+    font-size: 1rem;
+    font-family: inherit; /* Para que el textarea tenga la misma letra */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al hacer clic en un campo */
+.formulario input:focus, 
+.formulario textarea:focus {
+    border-color: #f0b90b; /* Borde dorado al escribir */
+    box-shadow: 0 0 0 2px rgba(240, 185, 11, 0.2);
+}
+
+/* Botón de Enviar */
+.btn-enviar {
+    width: 100%;
+    padding: 16px;
+    background-color: #f0b90b;
+    color: #1e2329; /* Texto oscuro para contraste con el dorado */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #dcb312;
+    transform: translateY(-2px);
+}
+
+.btn-enviar:disabled {
+    background-color: #5e5e5e;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Mensajes de error y éxito */
+.error-msg {
+    color: #f6465d;
+    text-align: center;
+    background: rgba(246, 70, 93, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.mensaje-exito {
+    text-align: center;
+    padding: 20px;
+}
+
+.mensaje-exito h3 {
+    color: #0ecb81;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.mensaje-exito p {
+    color: #fff;
+}
+
+.btn-volver {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: transparent;
+    border: 2px solid #f0b90b;
+    color: #f0b90b;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-volver:hover {
+    background: #f0b90b;
+    color: #000;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 600px) {
+    .contacto-wrapper {
+        padding: 30px 20px;
+    }
+    
+    .contacto-wrapper h2 {
+        font-size: 1.8rem;
+    }
+}

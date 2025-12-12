@@ -1,0 +1,66 @@
+.formacion-contenedor {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+    min-height: 80vh;
+}
+
+.formacion-header {
+    text-align: center;
+    margin-bottom: 50px;
+     
+
+}
+
+.formacion-header h2 {
+    font-size: 2.5rem;
+    color: #f0b90b; /* Tu color dorado */
+    margin-bottom: 15px;
+   
+
+}
+
+.formacion-header p {
+    color: #b7bdc6;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Cuadrícula de Videos --- */
+.videos-grid {
+    display: grid;
+    /* Crea columnas automáticas de mínimo 320px */
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 30px;
+}
+
+.video-card {
+    background-color: rgba(31, 45, 35, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2b3139;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 249, 249, 0.4);
+    border-color: #f0b90b;
+}
+
+.video-wrapper {
+    width: 100%;
+    /* La librería se encarga del aspecto 16:9, pero esto asegura el contenedor */
+    border-bottom: 1px solid #292c2f;
+}
+
+.video-card h3 {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    margin: 0;
+    color: #eaecef;
+    font-weight: 600;
+    line-height: 1.4;
+}

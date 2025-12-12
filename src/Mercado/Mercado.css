@@ -3,7 +3,7 @@
 .mercado-contenedor {
     padding: 40px 20px;
     width: 100%;
-    max-width: 1200px; /* Ancho máximo para que no se estire demasiado */
+    max-width: 1450px; /* Ancho máximo para que no se estire demasiado */
     margin: 0 auto; /* Centrar en la pantalla */
     color: #ffffff;
     min-height: 80vh;
