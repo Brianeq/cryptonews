@@ -25,7 +25,7 @@
     background-color: rgba(19, 23, 34, 0.85); /* Fondo oscuro semitransparente */
     border-radius: 12px; /* Bordes redondeados */
     overflow: hidden; /* Para que los bordes redondeados funcionen */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Sombra elegante */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
 }
 
 /* Cabecera de la tabla */
@@ -38,7 +38,7 @@
     padding: 18px 15px;
     text-align: left;
     font-size: 0.9rem;
-    color: #848e9c; /* Gris claro para títulos */
+    color: #848e9c; 
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -76,14 +76,14 @@
 
 /* Colores para cambios de precio */
 .positivo {
-    color: #0ecb81; /* Verde brillante */
+    color: #0ecb81; 
 }
 
 .negativo {
-    color: #f6465d; /* Rojo brillante */
+    color: #f6465d; 
 }
 
-/* --- Adaptación para Móviles --- */
+
 @media (max-width: 768px) {
     .mercado-contenedor {
         padding: 20px 10px;
@@ -91,7 +91,7 @@
     
     .tabla-monedas {
         display: block;
-        overflow-x: auto; /* Permite deslizar horizontalmente en móvil */
+        overflow-x: auto; 
         white-space: nowrap;
     }
     

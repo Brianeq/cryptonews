@@ -15,7 +15,7 @@
 
 .formacion-header h2 {
     font-size: 2.5rem;
-    color: #f0b90b; /* Tu color dorado */
+    color: #f0b90b;
     margin-bottom: 15px;
    
 
@@ -28,10 +28,9 @@
     margin: 0 auto;
 }
 
-/* --- Cuadrícula de Videos --- */
+/*  Cuadrícula de Videos  */
 .videos-grid {
     display: grid;
-    /* Crea columnas automáticas de mínimo 320px */
     grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     gap: 30px;
 }
@@ -52,7 +51,7 @@
 
 .video-wrapper {
     width: 100%;
-    /* La librería se encarga del aspecto 16:9, pero esto asegura el contenedor */
+    /* specto 16:9, esto asegura el contenedor */
     border-bottom: 1px solid #292c2f;
 }
 
@@ -63,4 +62,38 @@
     color: #eaecef;
     font-weight: 600;
     line-height: 1.4;
+}
+
+/* --- Adaptación para Móviles --- */
+@media (max-width: 768px) {
+    .formacion-contenedor {
+        /* Más espacio arriba para que el Navbar no ahogue el título */
+        padding: 100px 20px 40px 20px; 
+    }
+
+    .formacion-header h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .formacion-header p {
+        font-size: 1rem;
+        padding: 0 10px; /* Un poco de margen al texto para que no toque bordes */
+    }
+
+    .videos-grid {
+        /* ¡ESTA ES LA CLAVE! */
+        /* En vez de forzar un tamaño mínimo en píxeles, le decimos: 
+           "Ocupa 1 columna que llene todo el ancho disponible (1fr)" */
+        grid-template-columns: 1fr;
+        
+        gap: 30px; /* Espacio vertical entre video y video */
+        width: 100%; /* Asegura que la grilla no se salga de la pantalla */
+    }
+
+    .video-card {
+        /* Asegura que la tarjeta no sea más ancha que la pantalla */
+        width: 100%; 
+        max-width: 100%;
+    }
 }

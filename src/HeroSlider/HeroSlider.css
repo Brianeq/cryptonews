@@ -1,6 +1,6 @@
 /* Contenedor principal*/
 .hs-wrapper {
-  width: min(1400px, 96vw);  
+  width: min(1000px, 96vw);  
   margin: 16px auto 24px;
   padding: 0;               
 }
