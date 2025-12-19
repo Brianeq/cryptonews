@@ -1,0 +1,58 @@
+.about-section {
+    padding: 80px 20px;
+    background-color: #131722; /* Fondo oscuro igual a tu tabla */
+    color: #ffffff;
+    margin-top: -20px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Centra verticalmente imagen y texto */
+    gap: 50px; /* Espacio entre imagen y texto */
+}
+
+/* Contenedor de la imagen */
+.about-image {
+    flex: 1; /* Ocupa el 50% del ancho */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2b3139;
+}
+
+/* Contenedor del texto */
+.about-text {
+    flex: 1; /* Ocupa el otro 50% */
+}
+
+.about-text h2 {
+    color: #f0b90b; /* Amarillo Binance */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #b8c1ce; /* Gris suave para lectura prolongada */
+    margin-bottom: 15px;
+}
+
+
+/* Diseño Responsivo para Celulares */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Imagen arriba, texto abajo */
+        text-align: center;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+    }
+}

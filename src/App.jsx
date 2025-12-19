@@ -9,6 +9,7 @@ import Noticias from './Noticias/Noticias'
 import Mercado from './Mercado/Mercado'
 import Formacion from './Formacion/Formacion'
 import Contacto from './Contacto/Contacto'
+import SobreNosotros from './Sobre Nosotros/SobreNostros'
 import { Routes, Route } from "react-router-dom";
 
 
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/mercado" element={<Mercado />} />
         <Route path="/formacion" element={<Formacion />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/sobre-nosotros" element={<SobreNosotros />} />
       
         
       </Routes>

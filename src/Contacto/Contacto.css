@@ -1,42 +1,30 @@
-/* src/Contacto/Contacto.css */
-
 .contacto-contenedor {
-    /* Ocupa casi toda la pantalla para centrar verticalmente */
+  
     min-height: 85vh;
     padding: 40px 20px;
     
     /* Flexbox para centrar la caja del formulario perfectamente */
     display: flex;
-    justify-content: center; /* Centrado Horizontal */
-    align-items: center;     /* Centrado Vertical */
-    
-    /* Aseguramos que el color base sea blanco por si acaso */
+    justify-content: center; 
+    align-items: center;    
     color: #ffffff;
 }
 
-/* La "caja" o tarjeta del formulario */
+/* tarjeta del formulario */
 .contacto-wrapper {
     /* Fondo oscuro sólido/semitransparente para que resalte sobre el fondo de la web */
     background-color: #1e2329; 
-    
-    /* Espaciado interno generoso para que no se vea "chiquito" */
-    padding: 50px; 
-    
-    /* Bordes redondeados y borde sutil */
+    padding: 50px;   
     border-radius: 16px;
     border: 1px solid #2b3139;
-    
-    /* Ancho: Ocupa todo el espacio posible hasta llegar a 600px */
     width: 100%;
     max-width: 1000px;
-    
-    /* Sombra para darle profundidad */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 /* Encabezados */
 .contacto-wrapper h2 {
-    color: #f0b90b; /* Dorado */
+    color: #f0b90b; 
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 15px;
@@ -45,12 +33,12 @@
 
 .contacto-wrapper p {
     text-align: center;
-    color: #b7bdc6; /* Gris claro */
+    color: #b7bdc6; 
     margin-bottom: 40px;
     font-size: 1.1rem;
 }
 
-/* --- Estilos del Formulario --- */
+/*  Estilos del Formulario  */
 .formulario .campo {
     display: flex;
     flex-direction: column;
@@ -60,23 +48,20 @@
 .formulario label {
     margin-bottom: 10px;
     font-weight: 600;
-    color: #eaecef; /* Blanco hueso para etiquetas */
+    color: #eaecef; 
     font-size: 1rem;
 }
 
-/* Inputs y Textarea (Donde escribes) */
+/* Textarea */
 .formulario input, 
 .formulario textarea {
     padding: 15px;
     border-radius: 8px;
     border: 1px solid #474d57;
-    
-    /* FONDO OSCURO Y LETRA BLANCA IMPRESCINDIBLE */
     background-color: #0b0e11; 
     color: #ffffff; 
-    
     font-size: 1rem;
-    font-family: inherit; /* Para que el textarea tenga la misma letra */
+    font-family: inherit; 
     outline: none;
     transition: all 0.3s ease;
 }
@@ -84,7 +69,7 @@
 /* Efecto al hacer clic en un campo */
 .formulario input:focus, 
 .formulario textarea:focus {
-    border-color: #f0b90b; /* Borde dorado al escribir */
+    border-color: #f0b90b; 
     box-shadow: 0 0 0 2px rgba(240, 185, 11, 0.2);
 }
 
@@ -93,7 +78,7 @@
     width: 100%;
     padding: 16px;
     background-color: #f0b90b;
-    color: #1e2329; /* Texto oscuro para contraste con el dorado */
+    color: #1e2329; 
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -157,7 +142,6 @@
     color: #000;
 }
 
-/* Adaptación para móviles */
 @media (max-width: 600px) {
     .contacto-wrapper {
         padding: 30px 20px;

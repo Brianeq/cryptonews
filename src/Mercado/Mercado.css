@@ -1,9 +1,7 @@
-/* src/Mercado/Mercado.css */
-
 .mercado-contenedor {
     padding: 40px 20px;
     width: 100%;
-    max-width: 1450px; /* Ancho máximo para que no se estire demasiado */
+    max-width: 1450px; 
     margin: 0 auto; /* Centrar en la pantalla */
     color: #ffffff;
     min-height: 80vh;
@@ -13,7 +11,7 @@
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5rem;
-    color: #f0b90b; /* Color dorado estilo Binance */
+    color: #f0b90b;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     font-family: sans-serif;
 }
@@ -22,8 +20,8 @@
 .tabla-monedas {
     width: 100%;
     border-collapse: collapse; /* Elimina espacios entre bordes */
-    background-color: rgba(19, 23, 34, 0.85); /* Fondo oscuro semitransparente */
-    border-radius: 12px; /* Bordes redondeados */
+    background-color: rgba(19, 23, 34, 0.85); 
+    border-radius: 12px; 
     overflow: hidden; /* Para que los bordes redondeados funcionen */
     box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
 }
@@ -60,7 +58,7 @@
 
 /* Estilo para la celda del nombre e icono */
 .nombre-moneda {
-    display: flex;
+    padding: 0;
     align-items: center;
     gap: 12px;
     font-weight: bold;
@@ -83,6 +81,42 @@
     color: #f6465d; 
 }
 
+/* Contenedor del título y buscador */
+.header-mercado {
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo del input */
+.input-busqueda {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    width: 300px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-busqueda:focus {
+    border-color: #ffea00;
+}
+
+/* Estilo del enlace de la moneda */
+.link-cripto {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color del texto de la tabla */
+    font-weight: 600;
+}
+
+.link-cripto:hover {
+    color: #f6ff00; /* Se pone azul solo al pasar el mouse */
+}
 
 @media (max-width: 768px) {
     .mercado-contenedor {

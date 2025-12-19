@@ -1,5 +1,3 @@
-// src/Contacto/Contacto.jsx
-
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contacto.css';
@@ -28,7 +26,7 @@ export default function Contacto (){
         () => {
           setEnviado(true);
           setCargando(false);
-          form.current.reset(); // Limpia el formulario
+          form.current.reset(); // Limpia el form
         },
         (error) => {
           console.error('FAILED...', error.text);

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,44 +8,43 @@ const Footer = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
         {/* Sección About Us */}
         <div>
-          <h2 className="text-lg font-bold mb-4">About Us</h2>
+          <h2 className="text-lg font-bold mb-4">Sobre nosotros</h2>
           <p className="text-gray-300">
-            We are a team dedicated to providing the best products and services
-            to our customers.
+            Somos un equipo dedicado a brindar la mejor información y servicios sobre el mundo de las criptomonedas a nuestros usuarios.
           </p>
         </div>
 
         {/* Sección Quick Links */}
         <div>
-          <h2 className="text-lg font-bold mb-4">Quick Links</h2>
-          <ul>
-            <li><a href="#" className="hover:underline text-gray-300">Inicio</a></li>
-            <li><a href="#" className="hover:underline text-gray-300">Noticias</a></li>
-            <li><a href="#" className="hover:underline text-gray-300">Mercado</a></li>
-            <li><a href="#" className="hover:underline text-gray-300">Formacion</a></li>
-            <li><a href="#" className="hover:underline text-gray-300">Contacto</a></li>
-            <li><a href="#" className="hover:underline text-gray-300">Sobre Nostros</a></li>
+          <h2 className="text-lg font-bold mb-4">Enlaces rápidos</h2>
+          <ul className="space-y-2">
+            <li><Link to="/" className="hover:underline text-gray-300">Inicio</Link></li>
+            <li><Link to="/noticias" className="hover:underline text-gray-300">Noticias</Link></li>
+            <li><Link to="/mercado" className="hover:underline text-gray-300">Mercado</Link></li>
+            <li><Link to="/formacion" className="hover:underline text-gray-300">Formación</Link></li>
+            <li><Link to="/contacto" className="hover:underline text-gray-300">Contacto</Link></li>
+            <li><Link to="/sobre-nosotros" className="hover:underline text-gray-300">Sobre Nosotros</Link></li>
           </ul>
         </div>
 
         {/* Sección Follow Us */}
         <div>
-          <h2 className="text-lg font-bold mb-4">Follow Us</h2>
+          <h2 className="text-lg font-bold mb-4">Siguenos</h2>
           <ul className="flex space-x-6 items-center">
             <li>
-              <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <a href="https://www.facebook.com" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-white">
                 <FaFacebookF className="text-blue-500" />
                 <span>Facebook</span>
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <a href="https://www.x.com" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-white">
                 <FaTwitter className="text-sky-500" />
                 <span>Twitter</span>
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center space-x-2 text-gray-300 hover:text-white">
+              <a href="https://www.instagram.com" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-white">
                 <FaInstagram className="text-orange-500" />
                 <span>Instagram</span>
               </a>
