@@ -36,7 +36,7 @@ export default function Formacion() {
     return (
         <div className="formacion-contenedor">
             <div className="formacion-header">
-                <h2>🎓 Centro de Formación</h2>
+                <h2>Centro de Formación</h2>
                 <p>Aprende los fundamentos de las criptomonedas y blockchain con nuestra selección de videos educativos.</p>
             </div>
 

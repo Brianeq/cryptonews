@@ -37,7 +37,7 @@ export default function Mercado() {
     return (
         <div className="mercado-contenedor">
             <div className="header-mercado">
-                <h2>📈 Mercado Cripto (Top 100)</h2>
+                <h2> Mercado Cripto (Top 100)</h2>
                 {/* BARRA DE BÚSQUEDA */}
                 <input 
                     type="text" 

@@ -39,7 +39,7 @@ export default function Contacto (){
   return (
     <div className="contacto-contenedor">
       <div className="contacto-wrapper">
-        <h2>📩 Contáctanos</h2>
+        <h2> Contáctanos</h2>
         <p>¿Tienes dudas o sugerencias? Envíanos un mensaje.</p>
 
         {enviado ? (

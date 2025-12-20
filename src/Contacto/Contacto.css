@@ -24,9 +24,10 @@
 
 /* Encabezados */
 .contacto-wrapper h2 {
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 800;
     color: #f0b90b; 
     text-align: center;
-    font-size: 2.2rem;
     margin-bottom: 15px;
     margin-top: 0;
 }
