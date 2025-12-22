@@ -95,11 +95,11 @@
 
 /* Estilo del input */
 .input-busqueda {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 100;
     padding: 10px 15px;
     border-radius: 8px;
-    border: 1px solid #ffffff;
+    border: 0.2px solid #aeadad;
     width: 300px;
     outline: none;
     transition: border 0.3s;

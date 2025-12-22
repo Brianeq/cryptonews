@@ -25,21 +25,24 @@
 .nd-item {
   display: grid;
   grid-template-columns: 360px 1fr; 
-  align-items: center;
-  border: 2px solid #111;           
+  align-items: center;         
   padding: 18px;
-  background: #afadad;
+  background:#1f2937;
+}
+
+.nd-item:hover{
+     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 249, 249, 0.4);
+    border-color: #f0b90b;
 }
 
 
 .nd-thumb {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 2px solid #111;           
+  justify-content: center;          
   padding: 10px;                    
   height: 180px;
-  background: #afadad;
   text-decoration: none;
 }
 
@@ -63,7 +66,7 @@
   font-weight: 800;
   line-height: 1.15;
   margin: 0 0 8px 0;
-  color: #111;
+  color: #e7e4e4;
   text-decoration: none;
 }
 
@@ -77,10 +80,9 @@
 .nd-desc {
   font-size: clamp(14px, 1.4vw, 18px);
   line-height: 1.5;
-  color: #333;
+  color: #b2b0b0;
   margin: 0 0 10px 0;
   display: -webkit-box;            
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -89,7 +91,7 @@
 .nd-date {
   font-size: 13px;
   letter-spacing: .2px;
-  color: #000000;
+  color: #b2b0b0;
 }
 
 .nd-item:hover {
@@ -103,11 +105,12 @@
 
 .nd-skel {
   height: 216px;
-  border: 4px solid #111;
+  border: 1px solid #111;
   background:
     linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%) left/400% 100%;
-  animation: nd-shimmer 1.2s infinite;
+  animation: nd-shimmer 0.5s infinite;
 }
+
 @keyframes nd-shimmer {
   100% { background-position: right; }
 }
