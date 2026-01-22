@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <div className={Style.NavBar}>
       <NavLink to="/" className={Style.Brand}>
-        <img src="/logo.svg" alt="Logo del sitio" />
+        <img src="/logo.png" alt="Logo del sitio" />
       </NavLink>
 
       <button

@@ -34,7 +34,7 @@
     display: none;
 }
    .NavBar_items a:hover{
-     color:rgb(255, 255, 0);
+     color:rgb(255, 238, 0);
      cursor: pointer;
      opacity: 0.8;
  }
@@ -77,4 +77,12 @@
      cursor: pointer;
      opacity: 0.8;
  }
+}
+
+
+.Brand img {
+  height: 100px;       /* Ajusta este número según el grosor de tu barra */
+  width: auto;        /* Mantiene la proporción para que no se estire */
+  max-width: 100%;    /* Asegura que no se salga del contenedor */
+  object-fit: contain;
 }
