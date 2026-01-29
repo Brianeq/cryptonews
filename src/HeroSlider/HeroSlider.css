@@ -8,7 +8,7 @@
 .hs-viewport {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 500px;
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
@@ -130,7 +130,26 @@
   overflow: hidden;
 }
 
-/* Responsive: flechas un poco más grandes en pantallas grandes */
+
+@media (max-width: 767px) {
+  .hs-viewport {
+  
+    height: 400px; 
+   
+  }
+
+  .hs-caption h2 {
+    
+    font-size: 1.1rem;
+    -webkit-line-clamp: 4;
+    bottom: 12px;
+  }
+}
+
+
 @media (min-width: 900px) {
+  .hs-viewport {
+    height: 600px; 
+  }
   .hs-arrow { width: 44px; height: 44px; }
 }
